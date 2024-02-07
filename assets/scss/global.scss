@@ -1,0 +1,35 @@
+@import './normalize';
+@import './mediaqueries';
+@import './variables';
+@import './typography';
+
+body {
+
+    overflow: hidden;
+}
+
+body p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: rem(16);
+    font-weight: 400;
+    line-height: 26px;
+}
+
+a {
+    text-decoration: none;
+    
+    color: color(TrueWhite);
+}
+
+.fade-in { animation: fadein 1s; }
+.fade-out { animation: fadein 1s; }
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
