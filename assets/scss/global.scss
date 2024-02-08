@@ -4,11 +4,13 @@
 @import './typography';
 
 body {
-
+    height: 100%;
+    width: 100%;
     overflow: hidden;
 }
 
-body p {
+body p,
+body li {
     font-family: 'Montserrat', sans-serif;
     font-size: rem(16);
     font-weight: 400;
@@ -17,8 +19,13 @@ body p {
 
 a {
     text-decoration: none;
-    
-    color: color(TrueWhite);
+}
+
+.site-container {
+    width: 100%;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .fade-in { animation: fadein 1s; }
@@ -32,4 +39,53 @@ a {
 @keyframes fadeout {
     from { opacity: 1; }
     to   { opacity: 0; }
+}
+
+.sun {
+    color: color(TrueWhite);
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    top: 8px;
+    left: 8px;
+    width: 24px;
+    height: 24px;
+    background:
+      linear-gradient(to bottom,
+          currentColor 4px,transparent 0)
+          no-repeat 5px -6px/2px 6px,
+      linear-gradient(to bottom,
+          currentColor 4px,transparent 0)
+          no-repeat 5px 14px/2px 6px,
+      linear-gradient(to bottom,
+          currentColor 4px,transparent 0)
+          no-repeat -8px 5px/6px 2px,
+      linear-gradient(to bottom,
+          currentColor 4px,transparent 0)
+          no-repeat 14px 5px/6px 2px;
+    border-radius: 100px;
+    box-shadow: inset 0 0 0 2px;
+    border: 6px solid transparent;
+}
+.sun::after,
+.sun::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    border-right: 4px solid;
+    border-left: 4px solid;
+    left: -6px;
+    top: 5px;
+}
+
+.sun::before {
+    transform: rotate(-45deg);
+}
+
+.sun::after {
+    transform: rotate(45deg);
 }
