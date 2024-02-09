@@ -31,11 +31,34 @@ export default defineNuxtConfig({
 
     devtools: { enabled: true },
 
-    typescript: { typeCheck: true },
+    // typescript: { typeCheck: true },
 
     components: true,
 
-    modules: ['@pinia/nuxt', '@nuxtjs/prismic', '@nuxt/test-utils/module'],
+    prismic: { 
+        endpoint: "marcusjhdev",
+        clientConfig: {
+            routes: [
+                // Resolves the Homepage document to "/"
+                {
+                    type: "homepage",
+                    path: "/",
+                },
+                {
+                    type: "work",
+                    path: "/work",
+                },
+                {
+                    type: "about",
+                    path: "/about",
+                },
+                {
+                    type: "ramblings",
+                    path: "/ramblings",
+                },
+            ]
+        }
+    },
 
-    prismic: { endpoint: "marcusjhdev" }
+    modules: ['@pinia/nuxt', '@nuxtjs/prismic', '@nuxt/test-utils/module'],
 });

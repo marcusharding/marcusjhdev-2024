@@ -8,7 +8,7 @@
             {{ timeOfDay() }} my name is Marcus.
         </p>
         <p class="tagline">
-            I am a senior developer working full time at 
+            I am a Senior Developer working full time at 
             <a
                 href="https://thinkingbox.com/"
                 rel="noopener"
@@ -39,21 +39,26 @@ const { mode }    = storeToRefs(globalStore);
 
 .index {
     min-height: 100vh;
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-top: 10%;
+    justify-content: center;
 }
 
 .index .greeting {
     margin-bottom: 20px;
+    max-width: 740px;
+}
+
+.index .tagline {
+    max-width: 710px;
 }
 
 .index .greeting,
 .index .tagline {
     font-size: rem(40);
     line-height: 140%;
-    max-width: 710px;
     color: color(TrueWhite);
 }
 
@@ -64,11 +69,13 @@ const { mode }    = storeToRefs(globalStore);
 
     &:after {
         content: "";
+
         position: absolute;
         width: 100%;
         height: 1px;
         bottom: 0;
         left: 2px;
+        
         background-color: color(HotPink);
         opacity: 0.5;
     }

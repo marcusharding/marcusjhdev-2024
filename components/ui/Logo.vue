@@ -1,5 +1,8 @@
 <template>
-    <p class="logo uppercase bold" :class="mode">
+    <p
+        class="logo uppercase bold"
+        :class="{open: navOpen}, mode"
+    >
         marcusjh<span class="thin">dev</span>
     </p>
 </template>
@@ -12,7 +15,7 @@ import { storeToRefs } from 'pinia';
 
 // Store
 const globalStore = useGlobalStore();
-const { mode }    = storeToRefs(globalStore);
+const { mode, navOpen } = storeToRefs(globalStore);
 
 </script>
 
@@ -20,11 +23,18 @@ const { mode }    = storeToRefs(globalStore);
 
 .logo {
     color: color(TrueWhite);
+    
     font-size: rem(25);
 }
 
 .logo.light {
     color: color(OffBlack);
+}
+
+.logo.open {
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
 
 </style>

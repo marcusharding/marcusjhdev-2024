@@ -1,8 +1,10 @@
 <template>
-    <div :class="mode">
-        <Header />
-        <slot />
-        <Footer />
+    <div class="default" :class="mode">
+        <template v-if="!loading">
+            <Header :menu="menu" />
+            <slot />
+            <Footer />
+        </template>
     </div>
 </template>
 
@@ -18,11 +20,39 @@ import { storeToRefs } from 'pinia';
 
 // Store
 const globalStore = useGlobalStore();
-const { mode }    = storeToRefs(globalStore);
+const { mode } = storeToRefs(globalStore);
+const { updateNavOpen } = globalStore;
+
+// Prismic
+const { client } = usePrismic();
+
+// Reactive data
+const menu = ref();
+const loading = ref(true);
+const route = useRoute();
+
+watch(() => route.fullPath, () => {
+    updateNavOpen(false);
+});
+
+onMounted ( async () => {
+
+    try {
+
+        const data = await client.getSingle('header');
+        menu.value = data.data.menu;
+        loading.value = false;
+
+    } catch (e) {}
+});
 
 </script>
 
 <style lang="scss" scoped>
+
+.default {
+    min-height: 100vh;
+}
 
 .dark {
     background-color: color(OffBlack);
