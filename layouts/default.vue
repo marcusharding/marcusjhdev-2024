@@ -1,10 +1,15 @@
 <template>
     <div class="default" :class="mode">
+
+        <LoadingScreen v-if="loading" />
+
         <template v-if="!loading">
             <Header :menu="menu" />
             <slot />
             <Footer />
         </template>
+
+
     </div>
 </template>
 
@@ -13,6 +18,7 @@
 // Components
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
+import LoadingScreen from "@/components/LoadingScreen.vue";
 
 // Modules
 import { useGlobalStore } from '~/store/global';
@@ -37,11 +43,12 @@ watch(() => route.fullPath, () => {
 
 onMounted ( async () => {
 
+    eventBus.$on( "loadingComplete", () => { loading.value = false; });
+
     try {
 
         const data = await client.getSingle('header');
         menu.value = data.data.menu;
-        loading.value = false;
 
     } catch (e) {}
 });
