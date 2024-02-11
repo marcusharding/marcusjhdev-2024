@@ -83,11 +83,17 @@ const props = defineProps({
 }
 
 .nav ul li a {
+    font-size: rem(20);
+
     color: color(TrueWhite);
 
     &:hover {
         color: color(HotPink);
     }
+}
+
+.nav ul li a.router-link-active {
+    color: color(HotPink);
 }
 
 .nav.light ul li a {

@@ -1,9 +1,12 @@
 <template>
-    <div class="default" :class="mode">
+    <div class="default" :class="mode, loading">
+
         <template v-if="!loading">
+
             <Header :menu="menu" />
             <slot />
             <Footer />
+
         </template>
     </div>
 </template>
@@ -20,8 +23,8 @@ import { storeToRefs } from 'pinia';
 
 // Store
 const globalStore = useGlobalStore();
-const { mode } = storeToRefs(globalStore);
-const { updateNavOpen } = globalStore;
+const { mode, projects } = storeToRefs(globalStore);
+const { updateNavOpen, updateProjects } = globalStore;
 
 // Prismic
 const { client } = usePrismic();
@@ -39,9 +42,13 @@ onMounted ( async () => {
 
     try {
 
-        const data = await client.getSingle('header');
-        menu.value = data.data.menu;
+        const header = await client.getSingle('header');
+        
+        menu.value = header.data.menu;
         loading.value = false;
+
+        const { data: projects } = await useAsyncData("posts", () => client.getAllByType("project"));
+        updateProjects(projects);
 
     } catch (e) {}
 });
