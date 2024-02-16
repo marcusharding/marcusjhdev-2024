@@ -80,8 +80,4 @@ onMounted ( async () => {
     background-color: color(OffBlack);
 }
 
-.light {
-    background-color: color(OffWhite);
-}
-
 </style>

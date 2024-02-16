@@ -61,10 +61,6 @@ const props = defineProps({
     cursor: pointer;
 }
 
-.nav.light ul li {
-    color: color(OffBlack);
-}
-
 .nav ul li:not(:last-child) {
     margin-right: 20px;
 
@@ -94,10 +90,6 @@ const props = defineProps({
 
 .nav ul li a.router-link-active {
     color: color(HotPink);
-}
-
-.nav.light ul li a {
-    color: color(OffBlack);
 }
 
 .nav.open {

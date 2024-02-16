@@ -92,9 +92,4 @@ useHead({
     }
 }
 
-.index.light .greeting,
-.index.light .tagline {
-    color: color(OffBlack);
-}
-
 </style>

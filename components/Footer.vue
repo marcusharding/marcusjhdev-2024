@@ -84,14 +84,6 @@ const { mode }    = storeToRefs(globalStore);
     }
 }
 
-.footer.light a {
-    color: color(OffBlack);
-
-    &:hover {
-        color: color(HotPink);
-    }
-}
-
 .footer .social {
     position: absolute;
     width: 100px;

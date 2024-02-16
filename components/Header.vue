@@ -54,10 +54,6 @@ const props = defineProps({ menu: { type: Array, default: () => [] }});
     }
 }
 
-.header.light {
-    background-color: color(OffWhite);
-}
-
 .header.open {
     left: unset;
     width: 100%;

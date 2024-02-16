@@ -25,10 +25,10 @@ const { mode, navOpen } = storeToRefs(globalStore);
     color: color(TrueWhite);
     
     font-size: rem(25);
-}
 
-.logo.light {
-    color: color(OffBlack);
+    &:hover {
+        color: color(HotPink);
+    }
 }
 
 .logo.open {
