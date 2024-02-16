@@ -5,7 +5,7 @@
         </NuxtLink>
         <Nav :menu="menu" />
         <Hamburger />
-        <ModeToggle />
+        <!-- <ModeToggle /> -->
     </header>
 </template>
 
