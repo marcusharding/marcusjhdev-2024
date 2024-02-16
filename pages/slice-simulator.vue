@@ -7,7 +7,7 @@
     </SliceSimulator>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { SliceSimulator } from "@slicemachine/adapter-nuxt/simulator";
 import { components } from "~/slices";
 </script>

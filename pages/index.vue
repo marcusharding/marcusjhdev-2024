@@ -20,7 +20,7 @@
     </div>
 </template> 
 
-<script setup lang="ts">
+<script setup>
 
 // Utils
 import { timeOfDay } from '~/assets/js/utils';
@@ -28,10 +28,21 @@ import { timeOfDay } from '~/assets/js/utils';
 // Modules
 import { useGlobalStore } from '~/store/global';
 import { storeToRefs } from 'pinia';
+import { useHead } from 'unhead';
 
 // Store
 const globalStore = useGlobalStore();
 const { mode }    = storeToRefs(globalStore);
+
+useHead({
+    title: 'MARCUSJHDEV',
+    meta: [
+        {
+            name: 'description',
+            content: 'My page description',
+        },
+    ],
+});
 
 </script>
 

@@ -8,7 +8,7 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 
 // Components
 import ProjectTeaser from '~/components/ui/ProjectTeaser.vue';
@@ -16,10 +16,21 @@ import ProjectTeaser from '~/components/ui/ProjectTeaser.vue';
 // Modules
 import { useGlobalStore } from '~/store/global';
 import { storeToRefs } from 'pinia';
+import { useHead } from 'unhead';
 
 // Store
 const globalStore = useGlobalStore();
 const { projects } = storeToRefs(globalStore);
+
+useHead({
+    title: 'MARCUSJHDEV',
+    meta: [
+        {
+            name: 'description',
+            content: 'My page description',
+        },
+    ],
+});
 
 </script>
 
@@ -40,7 +51,6 @@ const { projects } = storeToRefs(globalStore);
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    // justify-content: space-around;
 }
 
 .work .projects .project {

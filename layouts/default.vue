@@ -3,23 +3,38 @@
 
         <template v-if="!loading">
 
+            <SkipLink />
             <Header :menu="menu" />
-            <slot />
+
+            <main
+                id="main"
+                class="main" 
+                aria-label='Main content' 
+                tabindex="-1"
+            >
+                <slot />
+            </main>
+
             <Footer />
 
         </template>
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 
 // Components
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
+import SkipLink from "~/components/ui/SkipLink.vue";
 
 // Modules
 import { useGlobalStore } from '~/store/global';
 import { storeToRefs } from 'pinia';
+import { createHead } from 'unhead';
+
+// Create a global head instance
+const head = createHead()
 
 // Store
 const globalStore = useGlobalStore();

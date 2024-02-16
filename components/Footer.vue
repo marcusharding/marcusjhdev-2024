@@ -7,24 +7,27 @@
             <ul class="social">
                 <li>
                     <a
+                        class="indented flex"
                         href="https://www.github.com/marcusharding"
                         rel="noopener"
                         target="_blank"
-                    ><Github /></a>
+                    ><Github />Github</a>
                 </li>
                 <li>
                     <a
+                        class="indented flex"
                         href="https://www.instagram.com/marcusjhdev/"
                         rel="noopener"
                         target="_blank"
-                    ><Instagram /></a>
+                    ><Instagram />Instagram</a>
                 </li>
                 <li>
                     <a
+                        class="indented flex"
                         href="https://www.linkedin.com/in/marcusjh/"
                         rel="noopener"
                         target="_blank"
-                    ><LinkedIn /></a>
+                    ><LinkedIn />LinkedIn</a>
                 </li>
             </ul>
             <a

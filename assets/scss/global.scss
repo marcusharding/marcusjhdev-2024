@@ -17,9 +17,7 @@ body li {
     line-height: 26px;
 }
 
-a {
-    text-decoration: none;
-}
+a { text-decoration: none; }
 
 .site-container {
     width: 100%;
@@ -40,3 +38,6 @@ a {
     from { opacity: 1; }
     to   { opacity: 0; }
 }
+
+.indented { text-indent: -9999px; }
+.flex { display: flex; }
