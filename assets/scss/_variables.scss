@@ -2,10 +2,12 @@ $color: (
     TrueBlack: #000000,
     TrueWhite: #FFFFFF,
     HotPink: #F09,
-    OffBlack: #161A1D
+    OffBlack: #161A1D,
+    OffWhite: #F5F5F5
 );
 
 $font-base: 16; // px
+$footer-height: 60px;
 
 @function color($key, $alpha: 1) {
 	@return rgba(map-get($color, $key), $alpha);

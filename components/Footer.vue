@@ -58,12 +58,11 @@ const { mode }    = storeToRefs(globalStore);
 <style lang="scss" scoped>
 
 .footer {
-    position: absolute;
+    position: relative;
 
     width: 90%;
     left: 5%;
-    bottom: 0;
-    height: 60px;
+    height: $footer-height;
 }
 
 .footer .mailto {

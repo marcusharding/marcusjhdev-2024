@@ -1,5 +1,5 @@
 <template>
-    <div class="blog"></div>
+    <div class="ramblings"></div>
 </template>
 
 <script setup>
@@ -20,4 +20,9 @@ useHead({
 </script>
 
 <style lang="scss" scoped>
+
+.ramblings {
+    height: calc(100vh - $footer-height);
+}
+
 </style>

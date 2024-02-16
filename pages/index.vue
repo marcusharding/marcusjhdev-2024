@@ -49,7 +49,7 @@ useHead({
 <style lang="scss" scoped>
 
 .index {
-    min-height: 100vh;
+    height: calc(100vh - $footer-height);
 
     display: flex;
     flex-direction: column;

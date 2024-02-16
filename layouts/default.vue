@@ -81,7 +81,7 @@ onMounted ( async () => {
 }
 
 .light {
-    background-color: #F5F5F5;
+    background-color: color(OffWhite);
 }
 
 </style>

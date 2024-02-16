@@ -1,5 +1,5 @@
 <template>
-    <header class="header" :class="{open: navOpen}">
+    <header class="header" :class="{open: navOpen}, mode">
         <NuxtLink to="/">
             <Logo />
         </NuxtLink>
@@ -9,7 +9,7 @@
     </header>
 </template>
 
-<script setup lang="ts">
+<script setup>
 
 // Components
 import Logo from "./ui/Logo.vue";
@@ -23,7 +23,7 @@ import { storeToRefs } from 'pinia';
 
 // Store
 const globalStore = useGlobalStore();
-const { navOpen, navActive } = storeToRefs(globalStore);
+const { navOpen, mode } = storeToRefs(globalStore);
 
 // Props
 const props = defineProps({ menu: { type: Array, default: () => [] }});
@@ -41,14 +41,21 @@ const props = defineProps({ menu: { type: Array, default: () => [] }});
     justify-content: space-between;
     align-items: center;
 
+    background-color: color(OffBlack);
+
     width: 100%;
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
 
     @include laptop-up {
-        padding-top: 40px;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
+}
+
+.header.light {
+    background-color: color(OffWhite);
 }
 
 .header.open {

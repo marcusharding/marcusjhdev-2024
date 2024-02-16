@@ -20,4 +20,9 @@ useHead({
 </script>
 
 <style lang="scss" scoped>
+
+.about {
+    height: calc(100vh - $footer-height);
+}
+
 </style>
